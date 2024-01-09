@@ -1,10 +1,9 @@
+import RoomsCard from "../../Components/RoomsCard/Rooms";
 
 const Home = () => {
     return (
         <div>
-            <h1>
-                this is home
-            </h1>
+            <RoomsCard></RoomsCard>
         </div>
     );
 };
