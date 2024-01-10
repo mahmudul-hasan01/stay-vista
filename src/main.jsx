@@ -6,12 +6,17 @@ import {
 } from "react-router-dom";
 import { router } from './Router/Router.jsx';
 import AuthProvider from './Provider/AuthProvider.jsx';
+import { HelmetProvider } from 'react-helmet-async';
+import 'react-date-range/dist/styles.css'; // main style file
+import 'react-date-range/dist/theme/default.css'; // theme css file
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <AuthProvider>
-      <RouterProvider router={router} />
-    </AuthProvider>
+    <HelmetProvider>
+      <AuthProvider>
+        <RouterProvider router={router} />
+      </AuthProvider>
+    </HelmetProvider>
   </React.StrictMode>
 )
