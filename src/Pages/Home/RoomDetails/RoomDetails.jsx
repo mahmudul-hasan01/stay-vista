@@ -5,6 +5,7 @@ import Loader from "../../../Components/RoomsCard/Loader";
 import { Helmet } from "react-helmet-async";
 import Header from "../RoomDetails/Header";
 import RoomInfo from "../RoomInfo";
+import RoomReservation from "./RoomReservation";
 
 const RoomDetails = () => {
     const { id } = useParams()
@@ -25,25 +26,27 @@ const RoomDetails = () => {
     }
     return (
         <Container>
-                <Helmet>
-                    <title>
-                        {rooms?.title}
-                    </title>
-                </Helmet>
-            <div className="">
-                <div className="flex flex-col gap-6">
-                    {/* header */}
-                    <Header roomData={rooms}></Header>
-                </div>
-                <div className="grid grid-cols-1 md:grid-cols-7 md:gap-6 mt-10">
-                    {/* room info */}
-                    <RoomInfo roomData={rooms}></RoomInfo>
-                    {/* calender */}
-                    <div className="md:col-span-3 order-first md:order-last mb-10">
-
+            <Helmet>
+                <title>
+                    {rooms?.title}
+                </title>
+            </Helmet>
+            {
+                rooms && <div className="">
+                    <div className="flex flex-col gap-6">
+                        {/* header */}
+                        <Header roomData={rooms}></Header>
+                    </div>
+                    <div className="grid grid-cols-1 md:grid-cols-7 md:gap-6 mt-10">
+                        {/* room info */}
+                        <RoomInfo roomData={rooms}></RoomInfo>
+                        {/* Room Reservation */}
+                        <div className="md:col-span-3 order-first md:order-last mb-10">
+                            <RoomReservation roomData={rooms}></RoomReservation>
+                        </div>
                     </div>
                 </div>
-            </div>
+            }
         </Container>
     );
 };

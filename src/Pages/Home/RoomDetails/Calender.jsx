@@ -1,10 +1,13 @@
-import { Calendar } from 'react-date-range';
+import { DateRange } from 'react-date-range';
 
-const Calender = () => {
+const Calender = ({ value, handleSelect }) => {
     return (
-        <Calendar>
-            
-        </Calendar>
+        <DateRange
+      rangeColors={['#F43F5E']}
+      // ranges={[value]}
+      // direction='vertical'
+      // showDateDisplay={false}
+    />
     );
 };
 
